@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans', sans-serif;
+    overflow: hidden;
+    background: url('https://i.ibb.co/55gPLxq/stacks-coins-arranged-bar-graph.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Ensure background covers the entire screen */
+}
+
+/* Split Screen Animation */
+.split-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left-side,
+.right-side {
+    width: 50%;
+    height: 100%;
+    transition: width 1s;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent overlay */
+}
+
+/* Box container for heading, subtitle, and button */
+.box-container {
+    width: 70%;
+    /* Wide rectangle */
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Nearly transparent */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow */
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+/* Main heading styling - Random glowing colors */
+h1 {
+    font-size: 3rem;
+    /* Larger font size */
+    margin-bottom: 1rem;
+    color: #fff;
+    /* Initial color */
+    animation: glow 1.5s infinite alternate, colorChange 3s infinite;
+    /* Animation for color and glow */
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+}
+
+/* Subtitle styling - Black color */
+.subtitle {
+    color: #000000;
+    /* Black color */
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+    /* Increased font size */
+}
+
+/* Track button styling */
+.track-btn {
+    background-color: #13168d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    /* Larger button */
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.track-btn:hover {
+    background-color: #ff6b6b;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+}
+
+/* Glowing and color-changing keyframes */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff00ff;
+    }
+
+    25% {
+        color: #00ffff;
+    }
+
+    50% {
+        color: #00ff00;
+    }
+
+    75% {
+        color: #ffff00;
+    }
+
+    100% {
+        color: #ff0000;
+    }
+}
+
+/* Split Animation Trigger */
+body.loaded .left-side {
+    width: 0;
+}
+
+body.loaded .right-side {
+    width: 0;
+}

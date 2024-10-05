@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Manager</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+</head>
+<body>
+  <h1>Expense Tracker</h1>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/KVNfmWL/images.jpg" alt="images" border="0">
+      <div class="balance-container">
+        <h2>Your Balance</h2>
+        <h2 id="balance" class="balance">Rs 0.00</h2>
+      </div>
+    </div>
+    <div class="inc-exp-container">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" class="money plus">+Rs 0.00</p>
+      </div>
+      <div>
+        <h4>Expenses</h4>
+        <p id="money-minus" class="money minus">-Rs 0.00</p>
+      </div>
+    </div>
+
+    <h3>History</h3>
+    <ul id="list" class="list"></ul>
+
+    <h3>Add New Transaction</h3>
+    <form id="form">
+      <div class="form-control">
+        <label for="text">Description</label>
+        <input type="text" id="text" placeholder="Enter description..." />
+      </div>
+      <div class="form-control">
+        <label for="amount">Amount <br />
+          <small>(negative = expense, positive = income)</small>
+        </label>
+        <input type="number" id="amount" placeholder="Enter amount..." />
+      </div>
+      <button class="btn">Add Transaction</button>
+    </form>
+
+    <h3>Warn me when balance is low</h3>
+    <form id="threshold-form">
+      <div class="form-control">
+        <label for="threshold">Alert me when balance is below</label>
+        <input type="number" id="threshold" placeholder="Enter threshold..." />
+      </div>
+      <button class="btn">Set Alert</button>
+    </form>
+  </div>
+
+  <div class="notification-container" id="notification">
+    <p>Please add a description and amount</p>
+  </div>
+
+  <script src="script.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>
